@@ -1,0 +1,25 @@
+[
+    {
+        "name": "First schema",
+        "first_name": "text",
+        "last_name": "text",
+        "personal_phone": "phone"
+    },
+    
+    {
+        "name": "Second schema",
+        "full_name": "text",
+        "personal_phone": "phone",
+        "email_address": "email",
+        "order_date": "date"
+    },
+
+    {
+        "name": "Third schema",
+        "department": "text",
+        "boss_phone": "phone",
+        "creation_date": "date",
+        "closure_date": "date"
+    }
+
+]

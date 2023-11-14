@@ -1,0 +1,1 @@
+{"_default": {"1": {"name": "First schema", "first_name": "text", "last_name": "text", "personal_phone": "phone"}, "2": {"name": "Second schema", "full_name": "text", "personal_phone": "phone", "email_address": "email", "order_date": "date"}, "3": {"name": "Third schema", "department": "text", "boss_phone": "phone", "creation_date": "date", "closure_date": "date"}}}
