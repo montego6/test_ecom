@@ -1,0 +1,63 @@
+[
+    {
+        "request": {
+            "first_name": "kirill"
+        },
+        "response": {
+            "first_name": "text"
+        }
+    },
+    {
+        "request": {
+            "first_name": "kirill",
+            "personal_phone": "+7 912 123 12 12"
+        },
+        "response": {
+            "first_name": "text",
+            "personal_phone": "phone"
+        }
+    },
+    {
+        "request":{
+            "full_name": "kirill kirillov",
+            "personal_phone": "+7 912 123 12 34",
+            "email_address": "der@google.com",
+            "order_date": "12.12.1212"
+        },
+        "response":{
+            "name": "Second schema"
+        }
+    },
+    {
+        "request": {
+            "personal_phone": "79121231212"
+        },
+        "response": {
+            "personal_phone": "text"
+        }
+    },
+    {
+        "request":{
+            "full_name": "kirill kirillov",
+            "personal_phone": "+7 912 123 12 34",
+            "email_address": "der@google.com",
+            "order_date": "12.12.1212",
+            "optional_field": "hey",
+            "shipping_date": "12.12.1345"
+        },
+        "response":{
+            "name": "Second schema"
+        }
+    },
+    {
+        "request": {
+            "department": "dep",
+            "boss_phone": "+7 912 123 12 12",
+            "creation_date": "12.12.1212",
+            "closure_date": "1212-12-12"
+        },
+        "response":{
+            "name": "Third schema"
+        }
+    }
+]
