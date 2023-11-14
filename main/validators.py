@@ -15,17 +15,17 @@ class DateValidator(Validator):
     
 class PhoneValidator(Validator):
     type = 'phone'
-    regex = r'^+7 \d{3} \d{3} \d{2} \d{2}$'
+    regex = r'^\+7 \d{3} \d{3} \d{2} \d{2}$'
 
 
 class EmailValidator(Validator):
     type = 'email'
-    regex = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+    regex = r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$'
     
 
 class TextValidator(Validator):
     type = 'text'
-    regex = r'^.+$'
+    regex = r'.*'
 
 
 def get_data_type(value):
