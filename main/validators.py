@@ -1,29 +1,35 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import re
 
-# Create your models here.
+
 class Validator(ABC):
-    @abstractmethod
-    def validate(value):
-        pass
+    @classmethod
+    def validate(cls, value):
+        return bool(re.match(cls.regex, value))
 
 
-class DataValidator(Validator):
-    @staticmethod
-    def validate(value):
-        regex = r'^(\d{2}\.\d{2}\.\d{4})|(\d{4}-\d{2}-\d{2})$'
-        return bool(re.match(regex, value))
+class DateValidator(Validator):
+    type = 'date'
+    regex = r'^(\d{2}\.\d{2}\.\d{4})|(\d{4}-\d{2}-\d{2})$'
+
     
-
 class PhoneValidator(Validator):
-    @staticmethod
-    def validate(value):
-        regex = r'^+7 \d{3} \d{3} \d{2} \d{2}'
-        return bool(re.match(regex, value))
-    
+    type = 'phone'
+    regex = r'^+7 \d{3} \d{3} \d{2} \d{2}$'
+
 
 class EmailValidator(Validator):
-    @staticmethod
-    def validate(value):
-        regex = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
-        return bool(re.match(regex, value))
+    type = 'email'
+    regex = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+    
+
+class TextValidator(Validator):
+    type = 'text'
+    regex = r'^.+$'
+
+
+def get_data_type(value):
+    validators = [DateValidator, PhoneValidator, EmailValidator, TextValidator]
+    for validator in validators:
+        if validator.validate(value):
+            return validator.type
