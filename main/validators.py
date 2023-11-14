@@ -9,23 +9,23 @@ class Validator(ABC):
 
 
 class DateValidator(Validator):
-    type = 'date'
-    regex = r'^(\d{2}\.\d{2}\.\d{4})|(\d{4}-\d{2}-\d{2})$'
+    type = "date"
+    regex = r"^(\d{2}\.\d{2}\.\d{4})|(\d{4}-\d{2}-\d{2})$"
 
-    
+
 class PhoneValidator(Validator):
-    type = 'phone'
-    regex = r'^\+7 \d{3} \d{3} \d{2} \d{2}$'
+    type = "phone"
+    regex = r"^\+7 \d{3} \d{3} \d{2} \d{2}$"
 
 
 class EmailValidator(Validator):
-    type = 'email'
-    regex = r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$'
-    
+    type = "email"
+    regex = r"^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$"
+
 
 class TextValidator(Validator):
-    type = 'text'
-    regex = r'.*'
+    type = "text"
+    regex = r".*"
 
 
 def get_data_type(value):
